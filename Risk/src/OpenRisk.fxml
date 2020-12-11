@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0"
+            prefWidth="200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <Text layoutX="17.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titel:"/>
+   <Text layoutX="18.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description:"/>
+   <Text layoutX="54.0" layoutY="14.0" />
+   <Text layoutX="15.0" layoutY="65.0" />
+   <Text layoutX="14.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Severity:"/>
+   <Text layoutX="76.0" layoutY="151.0"/>
+   <Button layoutX="17.0" layoutY="189.0" mnemonicParsing="false"
+           text="Edit risk" onAction="#openEditcloseView" fx:id="open"/>
+   <Button layoutX="119.0" layoutY="189.0" mnemonicParsing="false" text="Cancel" fx:id="close" onAction="#close"/>
+</AnchorPane>
