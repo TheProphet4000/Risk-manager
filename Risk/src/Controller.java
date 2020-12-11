@@ -5,10 +5,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.layout.VBox;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 
 public class Controller {
 
@@ -16,7 +22,6 @@ public class Controller {
     Button open = new Button();
     @FXML
     Button close = new Button();
-
     /* Start page */
     @FXML
     void openLog() throws IOException {
@@ -107,8 +112,37 @@ public class Controller {
         };
         create.setOnAction(Risk);
     }
-
     /* Edit risk */
 
     /* Delete risk */
+    @FXML
+    TextField riskname;
+    @FXML
+    TextArea riskdisc;
+    @FXML
+    TextField risksev;
+    @FXML
+    void saverisk() throws IOException {
+       // String name = riskname.getText();
+        //String disc = riskdisc.getText();
+        //int sev = Integer.parseInt(risksev.getText());
+        Risk risk = new Risk();
+        risk.name = riskname.getText();
+        risk.discibtion = riskdisc.getText();
+        risk.severity = Integer.parseInt(risksev.getText());
+        savetofile(risk);
+
+    }
+
+
+    void savetofile(Risk risk) throws IOException {
+        FileWriter fw = new FileWriter("log.txt", true);
+        BufferedWriter bw = new BufferedWriter(fw);
+        PrintWriter output = new PrintWriter(bw);
+        output.println(risk.getName());
+        output.print(risk.getDiscibtion());
+        output.print(risk.getSeverity());
+        output.close();
+    }
+
 }
